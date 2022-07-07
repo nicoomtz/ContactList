@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function AddPage({
@@ -34,13 +35,17 @@ export default function AddPage({
           value={email}
         />
         <br />
-
-        <Link
-          to="/"
-          className="bg-blue-500 text-white font-medium py-2 px-3 text-sm rounded"
-        >
-          Add
-        </Link>
+        <div className="flex justify-between">
+          <button className="bg-blue-500 text-white font-medium py-2 px-3 text-sm rounded">
+            Add
+          </button>
+          <Link
+            to="/"
+            className="bg-blue-500 text-white font-medium py-2 px-3 text-sm rounded"
+          >
+            Back to Contact List
+          </Link>
+        </div>
       </form>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import User from "../components/User";
 
@@ -12,13 +13,13 @@ export default function HomePage({ contact, setContact }) {
 
   return (
     <div className="flex flex-col justify-center align-center max-w-sm mx-auto text-center min-h-full">
-      <div className="flex p-2 justify-between bg-white max-w-sm rounded items-center shadow-lg bg-slate-50">
+      <div className="flex p-2 justify-between max-w-sm rounded items-center shadow-lg bg-slate-50">
         <h2 className="font-medium">Contact List</h2>
         <Link
           to="/add"
           className="bg-blue-500 text-white font-medium p-2 text-sm rounded"
         >
-          Add new contact
+          Add new Contact
         </Link>
       </div>
       <div className="">

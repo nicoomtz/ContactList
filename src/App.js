@@ -6,7 +6,7 @@ import {
   Routes,
   BrowserRouter,
   NavLink,
-  Navigate,
+  useNavigate,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AddPage from "./pages/AddPage";
@@ -15,14 +15,12 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [contact, setContact] = useState([]);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  useEffect(() => {}, []);
-
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const emailValidation =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (email.match(emailValidation)) {
@@ -41,7 +39,7 @@ function App() {
     } else {
       console.log("Invalido");
     }
-  }
+  };
 
   return (
     <>
