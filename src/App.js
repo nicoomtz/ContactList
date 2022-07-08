@@ -1,13 +1,7 @@
 import "./App.css";
 import "./input.css";
-import { useEffect, useState } from "react";
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-  NavLink,
-  useNavigate,
-} from "react-router-dom";
+import { useState } from "react";
+import { Route, Routes, BrowserRouter, NavLink } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AddPage from "./pages/AddPage";
 import UserPage from "./pages/UserPage";
@@ -50,7 +44,6 @@ function App() {
         };
         const newContacts = newUser;
         setContact([...contact, newContacts]);
-        console.log(contact);
         setName("");
         setEmail("");
         setError(false);
@@ -70,33 +63,6 @@ function App() {
       inputName.classList.add("inputError");
       inputEmail.classList.add("inputError");
     }
-    // if (email.match(emailValidation) && name.match(nameValidation) && !exists) {
-    //   const newUser = {
-    //     img: "https://www.sketchappsources.com/resources/source-image/profile-illustration-gunaldi-yunus.png",
-    //     userName: name,
-    //     userEmail: email,
-    //     id: uuidv4(),
-    //   };
-    //   const newContacts = newUser;
-    //   setContact([...contact, newContacts]);
-    //   console.log(contact);
-    //   setName("");
-    //   setEmail("");
-    //   setError(false);
-    //   setSuccess(true);
-    //   setTimeout(() => {
-    //     setSuccess(false);
-    //   }, 500);
-
-    //   if (inputName.classList.contains("inputError")) {
-    //     inputName.classList.remove("inputError");
-    //     inputEmail.classList.remove("inputError");
-    //   }
-    // } else {
-    //   setError(true);
-    //   inputName.classList.add("inputError");
-    //   inputEmail.classList.add("inputError");
-    // }
   };
 
   return (
@@ -121,14 +87,10 @@ function App() {
                 email={email}
                 success={success}
                 error={error}
+                exists={exists}
                 handleSubmit={handleSubmit}
                 setName={setName}
                 setEmail={setEmail}
-                setSuccess={setSuccess}
-                setError={setError}
-                exists={exists}
-                setExists={setExists}
-                contact={contact}
               />
             }
           />

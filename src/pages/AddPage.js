@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import HomeButton from "../components/HomeButton";
 
 export default function AddPage({
-  contact,
   name,
   email,
   setName,
@@ -11,10 +10,7 @@ export default function AddPage({
   handleSubmit,
   error,
   success,
-  setError,
-  setSuccess,
   exists,
-  setExists,
 }) {
   const navigate = useNavigate();
 
