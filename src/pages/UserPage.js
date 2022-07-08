@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 export default function UserPage({ contact }) {
   const { id } = useParams();
 
-  const contacto = contact.filter((user) => user.id === id);
+  const userContact = contact.filter((user) => user.id === id);
 
   return (
     <div className="flex flex-col w-80 mx-auto">
@@ -14,8 +14,8 @@ export default function UserPage({ contact }) {
           alt="profile"
         />
         <div className="p-2 px-4">
-          <h3 className="font-medium text-xl">{contacto[0].userName}</h3>
-          <p className="text-gray-500">{contacto[0].userEmail}</p>
+          <h3 className="font-medium text-xl">{userContact[0].userName}</h3>
+          <p className="text-gray-500">{userContact[0].userEmail}</p>
         </div>
       </div>
       <Link
