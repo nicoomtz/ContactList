@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import User from "../components/User";
 
 export default function HomePage({ contact, setContact }) {
-  console.log(contact);
-
   function handleClick(e) {
     const newContactList = contact.filter((user) => user.id !== e.target.id);
 

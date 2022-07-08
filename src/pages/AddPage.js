@@ -1,21 +1,50 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { useEffect } from "react";
+import HomeButton from "../components/HomeButton";
 
 export default function AddPage({
+  contact,
   name,
   email,
   setName,
   setEmail,
   handleSubmit,
   error,
+  success,
   setError,
+  setSuccess,
+  exists,
+  setExists,
 }) {
-  function crearItem() {
-    return (
-      <div className="w-80 bg-red-400 flex flex-col mx-auto p-3 rounded shadow-sm text-center my-5">
-        The data provided is not correct
-      </div>
-    );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (success) {
+      navigate("/");
+    }
+  }, [success]);
+
+  function renderItem(item) {
+    if (item === "error") {
+      return (
+        <div
+          id="errorDiv"
+          className="w-80 bg-red-400 flex flex-col mx-auto p-3 rounded shadow-sm text-center my-5"
+        >
+          The data provided is not correct
+        </div>
+      );
+    }
+    if (item === "email") {
+      return (
+        <div
+          id="errorDiv"
+          className="w-80 bg-red-400 flex flex-col mx-auto p-3 rounded shadow-sm text-center my-5"
+        >
+          The email is already scheduled
+        </div>
+      );
+    }
   }
 
   return (
@@ -53,16 +82,12 @@ export default function AddPage({
             <button className="bg-blue-500 text-white font-medium py-2 px-3 text-sm rounded">
               Add
             </button>
-            <Link
-              to="/"
-              className="bg-blue-500 text-white font-medium py-2 px-3 text-sm rounded"
-            >
-              Back to Contact List
-            </Link>
+            <HomeButton />
           </div>
         </form>
       </div>
-      {error ? crearItem() : ""}
+      {error ? renderItem("error") : ""}
+      {exists ? renderItem("email") : ""}
     </>
   );
 }

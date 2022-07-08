@@ -26,3 +26,7 @@ input {
 .home-user-icon {
   background-color: #181a1b;
 }
+
+.inputError {
+  border: 1px solid rgb(239 68 68);
+}

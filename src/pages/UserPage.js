@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import HomeButton from "../components/HomeButton";
 
 export default function UserPage({ contact }) {
   const { id } = useParams();
@@ -8,7 +9,7 @@ export default function UserPage({ contact }) {
   const { userName, userEmail } = contacto[0];
 
   return (
-    <div>
+    <div className="flex flex-col w-80 mx-auto">
       <div className="flex w-80 flex-col div-container mx-auto shadow-lg">
         <img
           src="https://www.sketchappsources.com/resources/source-image/profile-illustration-gunaldi-yunus.png"
@@ -19,6 +20,7 @@ export default function UserPage({ contact }) {
           <p className="">{userEmail}</p>
         </div>
       </div>
+      <HomeButton />
     </div>
   );
 }
