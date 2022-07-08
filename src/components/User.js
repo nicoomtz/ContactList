@@ -8,13 +8,13 @@ export default function User({ contact, handleClick, userId }) {
     <div
       id={id}
       key={id}
-      className="flex justify-between my-5 bg-blue-100 items-center py-1 px-4 border shadow"
+      className="home-user flex justify-between my-5 items-center py-1 px-4 shadow"
     >
       <Link to={`/user/${contact.id}`} className="flex flex-row">
         <img
           src="https://cdn.icon-icons.com/icons2/2556/PNG/512/profile_picture_user_icon_153075.png"
           alt="icon"
-          className="w-11 rounded-full bg-white"
+          className="home-icon-user w-11 rounded-full"
         />
         <div className="flex flex-col ml-3 text-justify">
           <h3 className="font-medium">{contact.userName}</h3>

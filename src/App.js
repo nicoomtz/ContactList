@@ -17,6 +17,8 @@ function App() {
   const [contact, setContact] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,8 +38,10 @@ function App() {
       console.log(contact);
       setName("");
       setEmail("");
+      setError(false);
+      setSuccess(true);
     } else {
-      console.log("Invalido");
+      setError(true);
     }
   };
 
@@ -46,7 +50,7 @@ function App() {
       <BrowserRouter>
         <NavLink
           to="/"
-          className="flex text-xl font-medium p-3 w-full justify-center border bg-red-200 mb-5 mx-auto"
+          className="flex text-xl font-medium p-3 w-full justify-center bg-blue-400 mb-5 mx-auto"
         >
           Contact Manager
         </NavLink>
@@ -61,9 +65,13 @@ function App() {
               <AddPage
                 name={name}
                 email={email}
+                success={success}
+                error={error}
+                handleSubmit={handleSubmit}
                 setName={setName}
                 setEmail={setEmail}
-                handleSubmit={handleSubmit}
+                setError={setError}
+                setSuccess={setSuccess}
               />
             }
           />

@@ -9,7 +9,7 @@ export default function UserPage({ contact }) {
 
   return (
     <div>
-      <div className="flex w-80 flex-col bg-slate-50 mx-auto shadow-lg">
+      <div className="flex w-80 flex-col div-container mx-auto shadow-lg">
         <img
           src="https://www.sketchappsources.com/resources/source-image/profile-illustration-gunaldi-yunus.png"
           alt="profile"

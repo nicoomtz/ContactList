@@ -13,7 +13,7 @@ export default function HomePage({ contact, setContact }) {
 
   return (
     <div className="flex flex-col justify-center align-center max-w-sm mx-auto text-center min-h-full">
-      <div className="flex p-2 justify-between max-w-sm rounded items-center shadow-lg bg-slate-50">
+      <div className="flex p-2 justify-between max-w-sm rounded items-center shadow-lg div-container">
         <h2 className="font-medium">Contact List</h2>
         <Link
           to="/add"
